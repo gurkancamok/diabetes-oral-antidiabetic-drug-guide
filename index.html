@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Diyabetik OAD İlaç Bilgileri Kılavuzu</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f4f7f6;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .select-kapsayici {
+            margin-bottom: 25px;
+        }
+        #ilacSecim {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 2px solid #3498db;
+            border-radius: 6px;
+            width: 380px; 
+            cursor: pointer;
+            background-color: white;
+            appearance: none; 
+        }
+        
+        .bilgi-kapsayici {
+            margin-top: 20px;
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .ilac-bilgisi {
+            display: none; /* Başlangıçta tüm bilgileri gizle */
+        }
+        .ilac-bilgisi h2 {
+            margin-top: 0;
+            color: #e74c3c;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed #e74c3c;
+        }
+        .not {
+            font-weight: bold;
+            color: #27ae60;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+        }
+        .ozel-not {
+            font-weight: bold;
+            color: #e67e22;
+            padding: 10px;
+            border: 1px solid #f39c12;
+            background-color: #fdf5e6;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .yan-etki-liste {
+             list-style-type: disc;
+             margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Diyabetik Oral Antidiyabetik İlaç Bilgileri</h1>
+    <p>Lütfen açılır menüden bilgi almak istediğiniz ilacı seçiniz:</p>
+
+    <div class="select-kapsayici">
+        <select id="ilacSecim" onchange="bilgiGoster(this.value)">
+            <option value="none">-- Bir İlaç Seçiniz --</option>
+            
+            <option value="diamicron">DiAMiCRON MR 30 MG (Gliklazid)</option>
+            <option value="forziga">FORZIGA (Dapagliflozin)</option>
+            <option value="glifor">GLİFOR 1000 MG (Metformin)</option> 
+            <option value="glucophage">GLUCOPHAGE 1000 MG (Metformin)</option>
+            <option value="janumet">JANUMET 50/1000 MG (Sitagliptin/Metformin)</option> 
+            <option value="januvia">JANUVIA 100 MG (Sitagliptin)</option>
+            <option value="jardiance10">JARDIANCE 10 MG (Empagliflozin)</option>
+            <option value="jardiance25">JARDIANCE 25 MG (Empagliflozin)</option>
+            <option value="matofin">MATOFİN 1000 MG (Metformin)</option> 
+            <option value="synjardy12">SYNJAARDY 12,5/1000 MG (Empagliflozin/Metformin)</option> 
+            <option value="synjardy5">SYNJAARDY 5/1000 MG (Empagliflozin/Metformin)</option> 
+            
+        </select>
+    </div>
+
+    <div class="bilgi-kapsayici">
+        <div id="none" class="ilac-bilgisi" style="display: block;">
+            Seçiminizi yaptıktan sonra ilaç bilgileri burada görünecektir.
+        </div>
+        
+        <div id="diamicron" class="ilac-bilgisi">
+            <h2>DiAMiCRON MR 30 MG (Gliklazid)</h2>
+            <h3>Kullanım Şekli ve Dozu:</h3>
+            <ul>
+                <li>**Sabah:** Aç 1 TABLET</li>
+            </ul>
+            <h3>Yan Etkiler:</h3>
+            <ul class="yan-etki-liste">
+                <li>**Hipoglisemi (Kan Şekerinin Düşmesi)**</li>
+            </ul>
+            <p class="ozel-not" style="color:#e74c3c; background-color: #fcecec;">
+                **HİPOGLİSEMİ UYARISI:** Kan şekerini düşürme riski yüksektir. Şeker düşmesi belirtisi hissederseniz hemen şekerli bir şey yiyip/içiniz.
+            </p>
+        </div>
+        
+        <div id="forziga" class="ilac-bilgisi">
+            <h2>FORZIGA (Dapagliflozin)</h2>
+            <h3>Kullanım Şekli ve Dozu:</h3>
+            <ul>
+                <li>**Öğlen:** Aç 1 TABLET</li>
+            </ul>
+            <h3>Yan Etkiler:</h3>
+            <ul class="yan-etki-liste">
+                <li>Karın Ağrısı</li>
+                <li>Kusma</li>
+                <li>İshal</li>
+                <li>Mide Bulantısı</li>
+                <li>İdrar Yolu Enfeksiyonu</li>
+            </ul>
+             <p class="not">
+                **NOT:** Bol sıvı tüketimine dikkat edilmelidir.
+            </p>
+        </div>
+
+        <div id="glifor" class="ilac-bilgisi">
+            <h2>GLİFOR 1000 MG (Metformin)</h2>
+            <h3>Kullanım Şekli ve Dozu:</h3>
+            <ul>
+                <li>**Standart Doz:** Sabah tok 1 TABLET, akşam tok 1 TABLET</li>
+            </ul>
+            <h3>Yan Etkiler:</h3>
+            <ul class="yan-etki-liste">
+                <li>Karın Ağrısı</li>
+                <li>Kusma</li>
+                <li>İshal</li>
+                <li>Mide Bulantısı</li>
+            </ul>
+        </div>
+        
+        <div id="glucophage" class="ilac-bilgisi">
+            <h2>GLUCOPHAGE 1000 MG (Metformin)</h2>
+            <h3>Kullanım Şekli ve Dozu:</h3>
+            <ul>
+                <li>**Sabah:** Tok 1 TABLET</li>
+                <li>**Akşam:** Tok 1 TABLET</li>
+            </ul>
+            <h3>Yan Etkiler:</h3>
+            <ul class="yan-etki-liste">
+                <li>Karın Ağrısı</li>
+                <li>Kusma</li>
+                <li>İshal</li>
+                <li>Mide Bulantısı</li>
+            </ul>
+        </div>
+
+        <div id="janumet" class="ilac-bilgisi">
+            <h2>JANUMET 50/1000 MG (Sitagliptin/Metformin)</h2>
+            <h3>Kullanım Şekli ve Dozu:</h3>
+            <ul>
+                <li>**Sabah:** Tok 1 TABLET</li>
+                <li>**Akşam:** Tok 1 TABLET</li>
+            </ul>
+            <h3>Yan Etkiler:</h3>
+            <ul class="yan-etki-liste">
+                <li>Karın Ağrısı</li>
+                <li>Kusma</li>
+                <li>İshal</li>
+                <li>Mide Bulantısı</li>
+                <li>**Pankreatit**</li>
+            </ul>
+            <p class="not" style="color:#8e44ad; background-color: #f3e9f8;">
+                **BİLGİ:** Sitagliptin (DPP-4) ve Metformin kombinasyonudur.
+            </p>
+        </div>
+
+        <div id="januvia" class="ilac-bilgisi">
+            <h2>JANUVIA 100 MG (Sitagliptin)</h2>
+            <h3>Kullanım Şekli ve Dozu:</h3>
+            <ul>
+                <li>**Sabah:** Tok 1 TABLET</li>
+            </ul>
+            <h3>Yan Etkiler:</h3>
+            <ul class="yan-etki-liste">
+                <li>Karın Ağrısı</li>
+                <li>Kusma</li>
+                <li>İshal</li>
+                <li>Mide Bulantısı</li>
+            </ul>
+            <p class="not" style="color:#2ecc71; background-color: #e8f5e9;">
+                **BİLGİ:** DPP-4 İnhibitörü sınıfındadır.
+            </p>
+        </div>
+
+        <div id="jardiance10" class="ilac-bilgisi">
+            <h2>JARDIANCE 10 MG (Empagliflozin)</h2>
+            <h3>Kullanım Şekli ve Dozu:</h3>
+            <ul>
+                <li>**Sabah:** Tok 1 TABLET</li>
+                <li>**Akşam:** Tok 1 TABLET</li>
+            </ul>
+            <h3>Yan Etkiler:</h3>
+            <ul class="yan-etki-liste">
+                <li>Karın Ağrısı</li>
+                <li>Kusma</li>
+                <li>İshal</li>
+                <li>Mide Bulantısı</li>
+                <li>İdrar Yolu Enfeksiyonu</li>
+            </ul>
+            <p class="not">
+                **ÖNEMLİ NOT:** Günde en az **2,5 Litre Su** içilmesi gerekmektedir.
+            </p>
+            <p class="ozel-not">
+                **ÖZEL UYARI:** İdrar tahlilinde **glukoz +3-4 pozitif** çıkabilir. İlaçtan kaynaklanır, korkulacak bir durum yoktur.
+            </p>
+        </div>
+
+        <div id="jardiance25" class="ilac-bilgisi">
+            <h2>JARDIANCE 25 MG (Empagliflozin)</h2>
+            <h3>Kullanım Şekli ve Dozu:</h3>
+            <ul>
+                <li>**Sabah:** Tok 1 TABLET</li>
+                <li>**Akşam:** Tok 1 TABLET</li>
+            </ul>
+            <h3>Yan Etkiler:</h3>
+            <ul class="yan-etki-liste">
+                <li>Karın Ağrısı</li>
+                <li>Kusma</li>
+                <li>İshal</li>
+                <li>Mide Bulantısı</li>
+                <li>İdrar Yolu Enfeksiyonu</li>
+            </ul>
+            <p class="not">
+                **ÖNEMLİ NOT:** Günde en az **2,5 Litre Su** içilmesi gerekmektedir.
+            </p>
+        </div>
+        
+        <div id="matofin" class="ilac-bilgisi">
+            <h2>MATOFİN 1000 MG (Metformin)</h2>
+            <h3>Kullanım Şekli ve Dozu:</h3>
+            <ul>
+                <li>**Sabah:** Tok 1 TABLET</li>
+                <li>**Akşam:** Tok 1 TABLET</li>
+            </ul>
+            <h3>Yan Etkiler:</h3>
+            <ul class="yan-etki-liste">
+                <li>Karın Ağrısı</li>
+                <li>Kusma</li>
+                <li>İshal</li>
+                <li>Mide Bulantısı</li>
+            </ul>
+        </div>
+        
+        <div id="synjardy12" class="ilac-bilgisi">
+            <h2>SYNJAARDY 12,5/1000 MG (Empagliflozin/Metformin)</h2>
+            <h3>Kullanım Şekli ve Dozu:</h3>
+            <ul>
+                <li>**Sabah:** Tok 1 TABLET</li>
+                <li>**Akşam:** Tok 1 TABLET</li>
+            </ul>
+            <h3>Yan Etkiler:</h3>
+            <ul class="yan-etki-liste">
+                <li>Karın Ağrısı, Kusma, İshal, Mide Bulantısı</li>
+                <li>İdrar Yolu Enfeksiyonu</li>
+            </ul>
+            <p class="not" style="color:#2c3e50; background-color: #d1ecf1; border-color: #bee5eb;">
+                **BİLGİ:** SGLT2 İnhibitörü ve Metformin kombinasyonudur. Bol sıvı tüketimine (en az 2.5 Lt su) dikkat edilmelidir.
+            </p>
+        </div>
+        
+        <div id="synjardy5" class="ilac-bilgisi">
+            <h2>SYNJAARDY 5/1000 MG (Empagliflozin/Metformin)</h2>
+            <h3>Kullanım Şekli ve Dozu:</h3>
+            <ul>
+                <li>**Sabah:** Tok 1 TABLET</li>
+                <li>**Akşam:** Tok 1 TABLET</li>
+            </ul>
+            <h3>Yan Etkiler:</h3>
+            <ul class="yan-etki-liste">
+                <li>Karın Ağrısı, Kusma, İshal, Mide Bulantısı</li>
+                <li>İdrar Yolu Enfeksiyonu</li>
+            </ul>
+            <p class="not" style="color:#2c3e50; background-color: #d1ecf1; border-color: #bee5eb;">
+                **ÖNEMLİ NOT:** Günde en az **2,5 Litre Su** içilmesi gerekmektedir.
+            </p>
+        </div>
+        
+
+    </div>
+
+    <script>
+        function bilgiGoster(ilacId) {
+            // Tüm ilaç bilgisi divlerini gizle
+            const tumBilgiler = document.querySelectorAll('.ilac-bilgisi');
+            tumBilgiler.forEach(div => {
+                div.style.display = 'none';
+            });
+
+            // Sadece seçilen ilacın bilgisini göster
+            const secilenBilgi = document.getElementById(ilacId);
+            if (secilenBilgi) {
+                secilenBilgi.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
